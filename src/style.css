@@ -1,3 +1,11 @@
+:root{
+  --ff-primary:"Inter", sans-serif;
+  
+  --ff-heading:var(--ff-primary);
+  --ff-body:var(--ff-primary);
+  
+}
+
 /* Box sizing rules */
 *,
 *::before,
