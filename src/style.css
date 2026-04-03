@@ -1,9 +1,56 @@
 :root{
+
+  --clr-accent-red-400:#9c2a22;
+  --clr-accent-green-400:#4caf50;
+  --clr-accent-blue-400:#2567f5;
+
+  --clr-neutral-100:#ffffff;
+  --clr-neutral-200:#dedede;
+  --clr-neutral-300:#8c8c8c;
+  --clr-neutral-500:#696969;
+  --clr-neutral-600:#444444;
+  --clr-neutral-800:#151515;
+  --clr-neutral-900:#000;
+
+  --shadow:rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
   --ff-primary:"Inter", sans-serif;
-  
+
   --ff-heading:var(--ff-primary);
   --ff-body:var(--ff-primary);
   
+  --fw-regular:400;
+  --fw-semi-bold:600;
+  --fw-bold:800;
+
+  --fs-200: 0.875rem;
+  --fs-300: 0.9375rem;
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.5rem; /* 24px */
+  --fs-700: 2rem;
+  --fs-800: 3rem;
+  --fs-900: 3.5rem;
+
+  
+
+  --fs-primary-heading: var(--fs-700);
+  --fs-secondary-heading: var(--fs-600);
+  --fs-body: var(--fs-400);
+  --fs-nav: var(--fs-300);
+  --fs-footer: var(--fs-200);
+  --fs-btn: var(--fs-300);
+}
+
+@media (min-width: 50em ) {
+  :root{
+    --fs-primary-heading: var(--fs-800);
+    --fs-secondary-heading: var(--fs-700);
+    --fs-body: var(--fs-500);
+    --fs-nav: var(--fs-300);
+    --fs-footer: var(--fs-200);
+    --fs-btn: var(--fs-300);
+  }
 }
 
 /* Box sizing rules */
