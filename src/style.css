@@ -1,3 +1,6 @@
+/* =====================
+   1.  ROOT 
+===================== */
 :root{
 
   --clr-accent-red-400:#9c2a22;
@@ -53,6 +56,10 @@
   }
 }
 
+
+/* =====================
+   2. RESET / BASE STYLES
+===================== */
 /* Box sizing rules */
 *,
 *::before,
@@ -109,3 +116,26 @@ svg {
     scroll-behavior: auto !important;
   }
 }
+
+
+
+/* =========================== 
+5. UTILITY CLASSES 
+===========================*/
+.fw-semi-bold{
+  font-weight: var(--fw-semi-bold);
+}
+
+.fw-bold{
+  font-weight: var(--fw-bold);
+}
+
+.container {
+  --max-width: 1200px;
+  --padding-inline: 1rem;
+  width: min( var(--max-width) , 100% - (var(--padding-inline) * 2));
+}
+
+:where(.flow > *:not(:first-child)) {
+  margin-top: 1.5rem;
+} 
