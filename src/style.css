@@ -2,7 +2,7 @@
    1.  ROOT 
 ===================== */
 :root{
-
+  color-scheme: light dark;
   --clr-accent-red-400:#9c2a22;
   --clr-accent-green-400:#4caf50;
   --clr-accent-blue-400:#2567f5;
@@ -12,9 +12,18 @@
   --clr-neutral-300:#8c8c8c;
   --clr-neutral-500:#696969;
   --clr-neutral-600:#444444;
+  --clr-neutral-700:#2e2e2e;
   --clr-neutral-800:#151515;
   --clr-neutral-900:#000;
 
+  --body-fg: light-dark( var(--clr-neutral-200) , var(--clr-neutral-700));
+  --body-bg: light-dark( var(--clr-neutral-200) , var(--clr-neutral-700));
+  --header-bg: light-dark( var(--clr-neutral-100) , var(--clr-neutral-900));
+  --section-bg: light-dark( var(--clr-neutral-100) , var(--clr-neutral-900));
+  --form-bg: light-dark( var(--clr-neutral-100) , var(--clr-neutral-900));
+  --footer-bg: light-dark( var(--clr-neutral-100) , var(--clr-neutral-900));
+  --logo-clr:var(--clr-accent-blue-400);
+  
   --shadow:rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
   --ff-primary:"Inter", sans-serif;
@@ -30,7 +39,7 @@
   --fs-300: 0.9375rem;
   --fs-400: 1rem;
   --fs-500: 1.125rem;
-  --fs-600: 1.5rem; /* 24px */
+  --fs-600: 1.5rem; 
   --fs-700: 2rem;
   --fs-800: 3rem;
   --fs-900: 3.5rem;
@@ -56,6 +65,21 @@
   }
 }
 
+:root:has(.theme-switcher [data-theme="system"]:checked){
+  color-scheme: light dark;
+}
+:root:has(.theme-switcher [data-theme="light"]:checked){
+  color-scheme: light;
+}
+:root:has(.theme-switcher [data-theme="dark"]:checked){
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+:root{
+  --shadow:none;  
+}
+}
 
 /* =====================
    2. RESET / BASE STYLES
@@ -116,7 +140,6 @@ svg {
     scroll-behavior: auto !important;
   }
 }
-
 
 
 /* =========================== 
