@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="../src/assets/images/logo/logo-.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Meditrack</title>
   <!-- Main CSS -->
   <link rel="stylesheet" href="../src/style.css" />
@@ -20,26 +20,76 @@
 </head>
 
 <body>
-<header class="primary-header">
-<div class="container">
-<div class="primary-header-content-wrapper">
-  <a href="#" class="logo-link">
-    <svg class="logo">
-      <use xlink:href="../src/assets/images/logo/logo.svg#logo"></use>
-    </svg>
-    <div class="logo-content">
-      <p class="fw-bold"><span>Medi</span><span class="text-accent-400">Track</span></p>
-      <p class="logo-small-text capitalize">patient records management </p>
+  <header class="primary-header">
+    <div class="container">
+      <div class="primary-header-content-wrapper">
+        <a href="#" class="logo-link">
+          <svg class="logo">
+            <use xlink:href="../src/assets/images/logo/logo.svg#logo"></use>
+          </svg>
+          <div class="logo-content">
+            <p class="fw-bold secondary-heading"><span>Medi</span><span class="text-accent-400">Track</span></p>
+            <p class="logo-small-text capitalize">patient records management </p>
+          </div>
+        </a>
+        <select id="themeSwitcher" class="theme-switcher" aria-label="Theme Switcher">
+          <option value="" data-theme="system">System</option>
+          <option value="" data-theme="light">Light</option>
+          <option value="" data-theme="dark">Dark</option>
+        </select>
+      </div>
     </div>
-  </a>
-    <select id="themeSwitcher"class="theme-switcher" aria-label="Theme Switcher">
-      <option value="" data-theme="system">System</option>
-      <option value="" data-theme="light">Light</option>
-      <option value="" data-theme="dark">Dark</option>
-    </select>
-</div>
-</div>
-</header>
+  </header>
+  <footer>
+    <div class="container">
+      <div class="logo-copyright-wrapper">
+        <svg class="logo">
+          <use xlink:href="../src/assets/images/logo/logo.svg#logo"></use>
+        </svg>
+        <p class="copyright-text">&copy; 2026 MediTrack. All rights reserved.</p>
+      </div>
+      <nav class="primary-footer-social-nav" aria-label="social links">
+        <ul class="primary-footer-social-nav-links-list">
+          <!-- github -->
+          <li><a href="#">
+              <svg class="primary-footer-social-icon">
+                <use xlink:href="../src/assets/images/social-icons/social.svg#github"></use>
+              </svg>
+            </a></li>
+          <!-- facebook -->
+          <li><a href="#">
+              <svg class="primary-footer-social-icon">
+                <use xlink:href="../src/assets/images/social-icons/social.svg#facebook"></use>
+              </svg>
+            </a></li>
+          <!-- instagram -->
+          <li><a href="#">
+              <svg class="primary-footer-social-icon">
+                <use xlink:href="../src/assets/images/social-icons/social.svg#instagram"></use>
+              </svg>
+            </a></li>
+          <!-- linkedin -->
+          <li><a href="#">
+              <svg class="primary-footer-social-icon">
+                <use xlink:href="../src/assets/images/social-icons/social.svg#linkedin"></use>
+              </svg>
+            </a></li>
+          <!-- twitter -->
+          <li><a href="#">
+              <svg class="primary-footer-social-icon">
+                <use xlink:href="../src/assets/images/social-icons/social.svg#twitter"></use>
+              </svg>
+            </a></li>
+          <!-- youtube -->
+          <li><a href="#">
+              <svg class="primary-footer-social-icon">
+                <use xlink:href="../src/assets/images/social-icons/social.svg#youtube"></use>
+              </svg>
+            </a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
 </body>
 
 </html>
