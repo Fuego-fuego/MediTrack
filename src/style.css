@@ -281,7 +281,16 @@ main{
 .add-patient-form-input-wrapper label{
   flex-basis:10%;
 }
-
+/*  Button */
+.btn{
+  background-color: var(--logo-clr);
+  color: var(--clr-neutral-100);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-400);
+  font-size: var(--fs-btn);
+  cursor: pointer;
+}
 
 /* Footer */
 .primary-footer{
