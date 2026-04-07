@@ -41,66 +41,84 @@
     </div>
   </header>
   <main>
-    <section class="add-patient-form">
-      <div class="contaner">
-        <h2 class="add-patient-form-heading | fw-semi-bold secondary-heading  capitalize">add patient</h2>
-      </div>
-      <form action="">
-        <!-- full name -->
-        <div class="add-patient-form-input-wrapper">
-          <label class="capitalize fw-semi-bold" for="full-name"> full name:</label>
-          <input type="text" name="full-name" id="fullName" placeholder="john doe" required>
-        </div>
-                <!-- age-->
-        <div class="add-patient-form-input-wrapper">
-          <label class="capitalize fw-semi-bold" for="age"> age:</label>
-          <input type="number" name="age" id="age" placeholder="23" required>
-        </div>
-        <!-- gender -->
-        <div class="add-patient-form-input-wrapper">
-          <label class="capitalize fw-semi-bold" for="gender"> gender:</label>
-          <select name="gender" id="gender" required>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
-        </div>
-        <!-- email -->
-        <div class="add-patient-form-input-wrapper">
-          <label class="capitalize fw-semi-bold" for="email"> email:</label>
-          <input type="email" name="email" id="email" placeholder="john.doe@example.com" required>
-        </div>
-        <!-- phone -->
-        <div class="add-patient-form-input-wrapper">
-          <label class="capitalize fw-semi-bold" for="phone"> phone:</label>
-          <input type="tel" name="phone" id="phone" placeholder="(123) 456-7890" required>
-        </div>
-        <!-- Condition -->
-        <div class="add-patient-form-input-wrapper">
-          <label class="capitalize fw-semi-bold" for="condition"> condition:</label>
-          <input type="text" name="condition" id="condition" placeholder="e.g., Diabetes" required>
-        </div>
-        <!-- last visit -->
-        <div class="add-patient-form-input-wrapper">
-          <label class="capitalize fw-semi-bold" for="last-visit"> last visit:</label>
-          <input type="date" name="last-visit" id="lastVisit" required>
-        </div>
-        <!-- status  -->
-        <div class="add-patient-form-input-wrapper">
-          <label class="capitalize fw-semi-bold" for="status"> status:</label>
-          <select name="status" id="status" required>
-            <option value="active">Active</option>
-            <option value="inactive">Recovered</option>
-            <option value="inactive">Critical</option>
-            <option value="inactive">Deceased</option>
-          </select>
-        </div>
-        <!-- textarea -->
-        <div class="add-patient-form-input-wrapper">
-          <label class="capitalize fw-semi-bold" for="notes"> notes:</label>
-          <textarea name="notes" id="notes" placeholder="Enter any additional notes about the patient..."></textarea>
-        </div>
-      </form>
-    </section>
+    <div class="container">
+      <section class="add-patient-form">
+          <h2 class="add-patient-form-heading | fw-semi-bold secondary-heading  capitalize">add patient</h2>
+        <form action="">
+          <div class="flow">
+            <!-- personal information -->
+            <fieldset class="add-patient-form-fieldset">
+              <legend class="capitalize fw-semi-bold">personal information</legend>
+              <!-- full name -->
+              <div class="add-patient-form-input-wrapper">
+                <label class="capitalize fw-semi-bold" for="full-name"> full name:</label>
+                <input type="text" name="full-name" id="fullName" placeholder="john doe" required>
+              </div>
+              <!-- age-->
+              <div class="add-patient-form-input-wrapper">
+                <label class="capitalize fw-semi-bold" for="age"> age:</label>
+                <input type="number" name="age" id="age" placeholder="23" required>
+              </div>
+              <!-- gender -->
+              <div class="add-patient-form-input-wrapper">
+                <label class="capitalize fw-semi-bold" for="gender"> gender:</label>
+                <select name="gender" id="gender" required>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+            </fieldset>
+            <!-- contact information -->
+            <fieldset class="add-patient-form-fieldset">
+              <legend class="capitalize fw-semi-bold">contact information</legend>
+              <!-- email -->
+              <div class="add-patient-form-input-wrapper">
+                <label class="capitalize fw-semi-bold" for="email"> email:</label>
+                <input type="email" name="email" id="email" placeholder="john.doe@example.com" required>
+              </div>
+              <!-- phone -->
+              <div class="add-patient-form-input-wrapper">
+                <label class="capitalize fw-semi-bold" for="phone"> phone:</label>
+                <input type="tel" name="phone" id="phone" placeholder="(123) 456-7890" required>
+              </div>
+            </fieldset>
+            <!-- medical details -->
+            <fieldset class="add-patient-form-fieldset">
+              <legend class="capitalize fw-semi-bold">Medical Details</legend>
+              <!-- Condition -->
+              <div class="add-patient-form-input-wrapper">
+                <label class="capitalize fw-semi-bold" for="condition"> condition:</label>
+                <input type="text" name="condition" id="condition" placeholder="e.g., Diabetes" required>
+              </div>
+              <!-- status -->
+              <div class="add-patient-form-input-wrapper">
+                <label class="capitalize fw-semi-bold" for="status"> status:</label>
+                <select name="status" id="status" required>
+                  <option value="active">Active</option>
+                  <option value="inactive">Recovered</option>
+                  <option value="inactive">Critical</option>
+                  <option value="inactive">Deceased</option>
+                </select>
+              </div>
+              <!-- last visit -->
+              <div class="add-patient-form-input-wrapper">
+                <label class="capitalize fw-semi-bold" for="last-visit"> last visit:</label>
+                <input type="date" name="last-visit" id="lastVisit" required>
+              </div>
+            </fieldset>
+            <!-- Additional Notes -->
+            <fieldset class="add-patient-form-fieldset">
+              <legend class="capitalize fw-semi-bold">Additional Notes</legend>
+              <!-- notes -->
+              <div class="add-patient-form-textarea-wrapper">
+                <label class="capitalize fw-semi-bold" for="notes"> notes:</label>
+                <textarea rows="4" name="notes" id="notes" placeholder="Enter any additional notes about the patient..."></textarea>
+              </div>
+            </fieldset>
+            <input type="button" value="Add Patient" class="btn">
+          </div>
+        </form>
+    </div>
   </main>
   <footer class="primary-footer">
     <div class="container">
@@ -117,6 +135,8 @@
             <li><a href="#">
                 <svg class="primary-footer-social-icon">
                   <use xlink:href="../src/assets/images/social-icons/social.svg#github"></use>
+
+                  </section>
                 </svg>
               </a></li>
             <!-- facebook -->
