@@ -44,7 +44,7 @@
     <div class="container">
       <!-- FORM SECTION -->
       <section class="add-patient-form">
-          <h2 class="add-patient-form-heading | fw-semi-bold secondary-heading  capitalize">add patient</h2>
+        <h2 class="add-patient-form-heading | fw-semi-bold secondary-heading  capitalize">add patient</h2>
         <form action="">
           <div class="flow">
             <!-- personal information -->
@@ -113,7 +113,8 @@
               <!-- notes -->
               <div class="add-patient-form-textarea-wrapper">
                 <label class="capitalize fw-semi-bold" for="notes"> notes:</label>
-                <textarea rows="4" name="notes" id="notes" placeholder="Enter any additional notes about the patient..."></textarea>
+                <textarea rows="4" name="notes" id="notes"
+                  placeholder="Enter any additional notes about the patient..."></textarea>
               </div>
             </fieldset>
             <input type="button" value="Add Patient" class="btn">
@@ -122,34 +123,147 @@
     </div>
     <!-- PATIENTS TABLE SECTION -->
     <section>
-    <div class="container">
-      <div class="patients-table-wrapper">
-        <header class="patients-table-header">
-          <!-- search by name /-->
-          <div class="patient-table-header-input-wrapper">
-            <label class="capitalize fw-semi-bold" for="patient-table-search-input">search patients:</label>
-            <input  name="patient-table-search-input" id="patientTableSearchInput" type="text" class="patients-table-search-input" placeholder="Search patients...">
-          </div>
-          <!-- filter by condition -->
-          <div class="patient-table-header-input-wrapper">
-            <label class="capitalize fw-semi-bold" for="patient-table-filter-input">filter by:</label>
-            <select  name="patient-table-filter-input" id="patientTableFilterInput" type="text" class="patients-table-filter-input" placeholder="Filter by condition...">
-              <option value="">1</option>
-              <option value="">2</option>
-            </select>
-          </div>
-          <!-- sort by date -->
-        <div class="patient-table-header-input-wrapper">
-            <label class="capitalize fw-semi-bold" for="patient-table-sort-input">sort by:</label>
-            <select  name="patient-table-sort-input" id="patientTableSortInput" type="text" class="patients-table-sort-input" placeholder="Sort by date...">
-              <option value="">1</option>
-              <option value="">2</option>
-            </select>
-          </div>
-        </header>
+      <div class="container">
+        <div class="patients-table-wrapper">
+          <header class="patients-table-header">
+            <!-- search by name /-->
+            <div class="patient-table-header-input-wrapper">
+              <label class="capitalize fw-semi-bold" for="patient-table-search-input">search patients:</label>
+              <input name="patient-table-search-input" id="patientTableSearchInput" type="text"
+                class="patients-table-search-input" placeholder="Search patients...">
+            </div>
+            <!-- filter by condition -->
+            <div class="patient-table-header-input-wrapper">
+              <label class="capitalize fw-semi-bold" for="patient-table-filter-input">filter by:</label>
+              <select name="patient-table-filter-input" id="patientTableFilterInput" type="text"
+                class="patients-table-filter-input" placeholder="Filter by condition...">
+                <option value="">1</option>
+                <option value="">2</option>
+              </select>
+            </div>
+            <!-- sort by date -->
+            <div class="patient-table-header-input-wrapper">
+              <label class="capitalize fw-semi-bold" for="patient-table-sort-input">sort by:</label>
+              <select name="patient-table-sort-input" id="patientTableSortInput" type="text"
+                class="patients-table-sort-input" placeholder="Sort by date...">
+                <option value="">1</option>
+                <option value="">2</option>
+              </select>
+            </div>
+          </header>
+          <table class="patients-table">
+            <thead class="capitalize fw-semi-bold">
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Condition</th>
+                <th>Email</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- patient record template -->
+              <!-- record-1 -->
+              <tr class="patient-record">
+                <td>John Doe</td>
+                <td>30</td>
+                <td>Diabetes</td>
+                <td>john.doe@example.com</td>
+                <td>
+                  <div class="actions-icon-wraper">
+                    <svg class="icon">
+                      <use xlink:href="../src/assets/images/misc/misc.svg#delete"></use>
+                    </svg>
+                  </div>
+                  <div class="actions-icon-wraper">
+                    <svg class="icon">
+                      <use xlink:href="../src/assets/images/misc/misc.svg#edit"></use>
+                    </svg>
+                  </div>
+                  <div class="actions-icon-wraper">
+                    <svg class="icon">
+                      <use xlink:href="../src/assets/images/misc/misc.svg#view"></use>
+                    </svg>
+                  </div>
+                </td>
+              </tr>
+              <!-- record-2 -->
+              <tr class="patient-record">
+                <td>John Doe</td>
+                <td>30</td>
+                <td>Diabetes</td>
+                <td>john.doe@example.com</td>
+                <td>
+                  <div class="actions-icon-wraper">
+                    <svg class="icon">
+                      <use xlink:href="../src/assets/images/misc/misc.svg#delete"></use>
+                    </svg>
+                  </div>
+                  <div class="actions-icon-wraper">
+                    <svg class="icon">
+                      <use xlink:href="../src/assets/images/misc/misc.svg#edit"></use>
+                    </svg>
+                  </div>
+                  <div class="actions-icon-wraper">
+                    <svg class="icon">
+                      <use xlink:href="../src/assets/images/misc/misc.svg#view"></use>
+                    </svg>
+                  </div>
+                </td>
+              </tr>
+              <!-- record-3-->
+              <tr class="patient-record">
+                <td>John Doe</td>
+                <td>30</td>
+                <td>Diabetes</td>
+                <td>john.doe@example.com</td>
+                <td>
+                  <div class="actions-icon-wraper">
+                    <svg class="icon">
+                      <use xlink:href="../src/assets/images/misc/misc.svg#delete"></use>
+                    </svg>
+                  </div>
+                  <div class="actions-icon-wraper">
+                    <svg class="icon">
+                      <use xlink:href="../src/assets/images/misc/misc.svg#edit"></use>
+                    </svg>
+                  </div>
+                  <div class="actions-icon-wraper">
+                    <svg class="icon">
+                      <use xlink:href="../src/assets/images/misc/misc.svg#view"></use>
+                    </svg>
+                  </div>
+                </td>
+              </tr>
+              <!-- record-4-->
+              <tr class="patient-record">
+                <td>John Doe</td>
+                <td>30</td>
+                <td>Diabetes</td>
+                <td>john.doe@example.com</td>
+                <td>
+                  <div class="actions-icon-wraper">
+                    <svg class="icon">
+                      <use xlink:href="../src/assets/images/misc/misc.svg#delete"></use>
+                    </svg>
+                  </div>
+                  <div class="actions-icon-wraper">
+                    <svg class="icon">
+                      <use xlink:href="../src/assets/images/misc/misc.svg#edit"></use>
+                    </svg>
+                  </div>
+                  <div class="actions-icon-wraper">
+                    <svg class="icon">
+                      <use xlink:href="../src/assets/images/misc/misc.svg#view"></use>
+                    </svg>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
-     </section>
+    </section>
   </main>
   <footer class="primary-footer">
     <div class="container">
@@ -166,8 +280,6 @@
             <li><a href="#">
                 <svg class="primary-footer-social-icon">
                   <use xlink:href="../src/assets/images/social-icons/social.svg#github"></use>
-
-                  </section>
                 </svg>
               </a></li>
             <!-- facebook -->
@@ -206,5 +318,5 @@
     </div>
   </footer>
 </body>
-
 </html>
+

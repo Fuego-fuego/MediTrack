@@ -24,7 +24,7 @@
   --footer-bg: light-dark( var(--clr-neutral-100) , var(--clr-neutral-800));
   --logo-clr:var(--clr-accent-blue-400);
   --input-bg: light-dark( var(--clr-neutral-100) , var(--clr-neutral-700));
-  --border-clr: light-dark(  var(--clr-neutral-700) , var(--clr-neutral-100) );
+  --border-clr: light-dark(  var(--clr-neutral-700) , var(--clr-neutral-300) );
   
   --shadow:rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
@@ -302,10 +302,16 @@ main{
 
 .patient-table-header-input-wrapper input,
 .patient-table-header-input-wrapper select{
-  flex-grow: 1;
   border-radius: var(--border-radius-400);
   border:var(--border-input);
   padding: 0.4rem 0.5rem;
+  
+}
+.patient-table-header-input-wrapper {
+  margin-inline-end: auto;
+  display: flex;
+  align-items: center;
+  gap:0.5rem;
 }
 /*  Button */
 .btn{
