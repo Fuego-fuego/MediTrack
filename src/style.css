@@ -1,5 +1,5 @@
 /* =====================
-   1.  ROOT 
+    1.  ROOT 
 ===================== */
 :root{
   color-scheme: light dark;
@@ -16,13 +16,14 @@
   --clr-neutral-800:#151515;
   --clr-neutral-900:#000;
 
-  --body-fg: light-dark( var(--clr-neutral-200) , var(--clr-neutral-700));
+  --body-fg: light-dark(  var(--clr-neutral-700), var(--clr-neutral-200));
   --body-bg: light-dark( var(--clr-neutral-200) , var(--clr-neutral-700));
   --header-bg: light-dark( var(--clr-neutral-100) , var(--clr-neutral-900));
   --section-bg: light-dark( var(--clr-neutral-100) , var(--clr-neutral-900));
   --form-bg: light-dark( var(--clr-neutral-100) , var(--clr-neutral-900));
   --footer-bg: light-dark( var(--clr-neutral-100) , var(--clr-neutral-900));
   --logo-clr:var(--clr-accent-blue-400);
+  --input-bg: light-dark( var(--clr-neutral-100) , var(--clr-neutral-700));
   
   --shadow:rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
@@ -35,16 +36,14 @@
   --fw-semi-bold:600;
   --fw-bold:800;
 
-  --fs-200: 0.875rem;
+  --fs-100: 0.75rem;
   --fs-300: 0.9375rem;
   --fs-400: 1rem;
   --fs-500: 1.125rem;
   --fs-600: 1.5rem; 
   --fs-700: 2rem;
   --fs-800: 3rem;
-  --fs-900: 3.5rem;
-
-  
+  --fs-900: 3.5rem;  
 
   --fs-primary-heading: var(--fs-700);
   --fs-secondary-heading: var(--fs-600);
@@ -82,7 +81,7 @@
 }
 
 /* =====================
-   2. RESET / BASE STYLES
+  2. RESET / BASE STYLES
 ===================== */
 /* Box sizing rules */
 *,
@@ -105,6 +104,7 @@ ol[role='list'] {
 html,
 body {
   min-height: 100%;
+  
 }
 html:focus-within {
   scroll-behavior: smooth;
@@ -140,11 +140,96 @@ svg {
     scroll-behavior: auto !important;
   }
 }
+/* =========================== 
+3. GLOBAL STYLES 
+===========================*/
+h1,
+h2,
+h3,
+h4,
+h5, 
+h6{
+  font-family: var(--ff-heading);
+  line-height: 1.2;
+}
 
+body{
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  color: var(--body-fg);
+  background-color: var(--body-bg);
+  line-height: 1.5;
+}
+
+.primary-header{
+  background-color: var(--header-bg);
+}
+
+select,
+input,
+textarea{
+  background:var(--input-bg);
+}
+
+/* =========================== 
+4. COMPONENTS 
+===========================*/
+/*  Header */
+.primary-header-content-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1rem;
+  box-shadow: var(--shadow);
+}
+.logo-link{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color:var(--body-fg);
+  font-size: var(--fs-700);
+  line-height: 1;
+  text-decoration: none;
+}
+.logo{
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: var(--logo-clr);
+}
+.logo-small-text{
+  font-size: var(--fs-100);
+}
+
+.theme-switcher{
+  
+  border: 1px solid var(--body-fg);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: var(--fs-nav);
+  cursor: pointer;
+}
+
+.theme-switcher option{
+  background: transparent;
+}
 
 /* =========================== 
 5. UTILITY CLASSES 
 ===========================*/
+.primary-heading{
+  font-size: var(--fs-primary-heading);
+}
+
+.secondary-heading{
+  font-size: var(--fs-secondary-heading);
+}
+
+.text-accent-400{
+  color: var(--clr-accent-blue-400);
+}
+.capitalize{
+  text-transform: capitalize;
+}
 .fw-semi-bold{
   font-weight: var(--fw-semi-bold);
 }
@@ -154,9 +239,10 @@ svg {
 }
 
 .container {
-  --max-width: 1200px;
+  --max-width: 68.75em;
   --padding-inline: 1rem;
   width: min( var(--max-width) , 100% - (var(--padding-inline) * 2));
+  margin-inline: auto;
 }
 
 :where(.flow > *:not(:first-child)) {

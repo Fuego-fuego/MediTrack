@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="../src/assets/images/logo/logo-.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Meditrack</title>
   <!-- Main CSS -->
   <link rel="stylesheet" href="../src/style.css" />
@@ -20,12 +20,25 @@
 </head>
 
 <body>
-<header>
-<select id="themeSwitcher"class="theme-switcher">
-  <option value="" data-theme="system">System</option>
-  <option value="" data-theme="light">Light</option>
-  <option value="" data-theme="dark">Dark</option>
-</select>
+<header class="primary-header">
+<div class="container">
+<div class="primary-header-content-wrapper">
+  <a href="#" class="logo-link">
+    <svg class="logo">
+      <use xlink:href="../src/assets/images/logo/logo.svg#logo"></use>
+    </svg>
+    <div class="logo-content">
+      <p class="fw-bold"><span>Medi</span><span class="text-accent-400">Track</span></p>
+      <p class="logo-small-text capitalize">patient records management </p>
+    </div>
+  </a>
+    <select id="themeSwitcher"class="theme-switcher" aria-label="Theme Switcher">
+      <option value="" data-theme="system">System</option>
+      <option value="" data-theme="light">Light</option>
+      <option value="" data-theme="dark">Dark</option>
+    </select>
+</div>
+</div>
 </header>
 </body>
 
