@@ -53,6 +53,7 @@
   --fs-footer: var(--fs-200);
   --fs-btn: var(--fs-300);
   --fs-logo-small-text: var(--fs-50);
+  --fs-primary-footer-copyright-text: var(--fs-100);
 }
 
 @media (min-width: 50em ) {
@@ -214,6 +215,45 @@ textarea{
 .theme-switcher option{
   background: transparent;
 }
+/* Footer */
+.primary-footer{
+  background-color: var(--footer-bg);
+}
+
+.primary-footer-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.primary-footer-logo-copyright-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.primary-footer-copyright-text{
+  font-size: var(--fs-primary-footer-copyright-text);
+}
+
+.primary-footer-social-nav-links-list{
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.primary-footer-social-icon{
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: var(--body-fg);
+}
+.primary-footer-social-icon:is(:hover, :focus){
+  fill: var(--logo-clr);
+}
+
+
 
 /* =========================== 
 5. UTILITY CLASSES 
