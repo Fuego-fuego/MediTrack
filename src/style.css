@@ -183,6 +183,8 @@ main{
   margin-block: 2rem 3rem;
 }
 
+
+
 /* =========================== 
 4. COMPONENTS 
 ===========================*/
@@ -281,6 +283,30 @@ main{
 .add-patient-form-input-wrapper label{
   flex-basis:10%;
 }
+
+/* Patients Table */
+.patients-table-wrapper{
+  margin-top: 2rem;
+  background-color: var(--section-bg);
+  padding: 1.5rem 1rem;
+  border-radius: var(--border-radius-400);
+  box-shadow: var(--shadow);  
+}
+
+.patients-table-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  
+  gap:1rem;  
+}
+
+.patient-table-header-input-wrapper input,
+.patient-table-header-input-wrapper select{
+  flex-grow: 1;
+  border-radius: var(--border-radius-400);
+  border:var(--border-input);
+  padding: 0.4rem 0.5rem;
+}
 /*  Button */
 .btn{
   background-color: var(--logo-clr);
@@ -301,8 +327,17 @@ main{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: 1rem;
+  padding-block: 1.5rem;
   box-shadow: var(--shadow);
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 50em) {
+  .primary-footer-wrapper{
+    flex-direction: row;
+    gap:0;
+  }
 }
 
 .primary-footer-logo-copyright-wrapper{

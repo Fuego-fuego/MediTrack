@@ -42,6 +42,7 @@
   </header>
   <main>
     <div class="container">
+      <!-- FORM SECTION -->
       <section class="add-patient-form">
           <h2 class="add-patient-form-heading | fw-semi-bold secondary-heading  capitalize">add patient</h2>
         <form action="">
@@ -119,6 +120,36 @@
           </div>
         </form>
     </div>
+    <!-- PATIENTS TABLE SECTION -->
+    <section>
+    <div class="container">
+      <div class="patients-table-wrapper">
+        <header class="patients-table-header">
+          <!-- search by name /-->
+          <div class="patient-table-header-input-wrapper">
+            <label class="capitalize fw-semi-bold" for="patient-table-search-input">search patients:</label>
+            <input  name="patient-table-search-input" id="patientTableSearchInput" type="text" class="patients-table-search-input" placeholder="Search patients...">
+          </div>
+          <!-- filter by condition -->
+          <div class="patient-table-header-input-wrapper">
+            <label class="capitalize fw-semi-bold" for="patient-table-filter-input">filter by:</label>
+            <select  name="patient-table-filter-input" id="patientTableFilterInput" type="text" class="patients-table-filter-input" placeholder="Filter by condition...">
+              <option value="">1</option>
+              <option value="">2</option>
+            </select>
+          </div>
+          <!-- sort by date -->
+        <div class="patient-table-header-input-wrapper">
+            <label class="capitalize fw-semi-bold" for="patient-table-sort-input">sort by:</label>
+            <select  name="patient-table-sort-input" id="patientTableSortInput" type="text" class="patients-table-sort-input" placeholder="Sort by date...">
+              <option value="">1</option>
+              <option value="">2</option>
+            </select>
+          </div>
+        </header>
+      </div>
+    </div>
+     </section>
   </main>
   <footer class="primary-footer">
     <div class="container">
