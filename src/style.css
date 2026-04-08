@@ -25,6 +25,7 @@
   --logo-clr:var(--clr-accent-blue-400);
   --input-bg: light-dark( var(--clr-neutral-100) , var(--clr-neutral-700));
   --border-clr: light-dark(  var(--clr-neutral-700) , var(--clr-neutral-300) );
+  --tr-nth-child-even-bg: light-dark(  var(--clr-neutral-200), var(--clr-neutral-700));
   
   --shadow:rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
@@ -196,6 +197,12 @@ main{
   padding-block: 1rem;
   box-shadow: var(--shadow);
 }
+@media(max-width: 26em){
+  .primary-header-content-wrapper{
+    flex-direction: column;
+    gap:1rem;
+  }
+}
 .logo-link{
   display: flex;
   align-items: center;
@@ -212,7 +219,11 @@ main{
 .logo-small-text{
   font-size: var(--fs-logo-small-text);
 }
-
+.theme-switcher-wrapper{
+  display: flex;
+  align-items: center;
+  gap:0.5rem;
+}
 .theme-switcher{  
   border: 1px solid var(--body-fg);
   padding: 0.25rem 0.5rem;
@@ -295,6 +306,7 @@ main{
 
 .patients-table-header{
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;  
   gap:1rem;  
@@ -313,6 +325,69 @@ main{
   align-items: center;
   gap:0.5rem;
 }
+.patient-table-header-input-search-wrapper{  
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap:0.5rem;
+}
+@media (min-width: 50em) {
+.patient-table-header-input-search-wrapper{
+  flex-direction: row;
+}
+}
+
+/* table */
+
+.table-wrapper{
+  overflow-x: auto;
+}
+table{  
+  margin-block-start: 2rem;
+  width: 100%;
+  border-collapse: collapse;
+}
+thead{
+  border-bottom: 1px solid var(--border-clr);
+  background-color: var(--clr-accent-blue-400);
+  color: var(--clr-neutral-100);
+  text-align: left;
+}
+
+th,td {
+  padding: 0.5rem;
+  text-align: left;
+  border: 1px solid #ddd;
+  
+}
+
+tr:nth-child(even) {
+  background-color: var(--tr-nth-child-even-bg);
+}
+
+.patients-table-action-buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+.patients-table-actions-icon{
+  min-width: 1.5rem;
+  aspect-ratio: 1;
+  fill: var(--body-fg);
+  cursor: pointer;
+  gap:0.5rem;
+}
+
+.patients-table-actions-view-icon:is(:hover, :focus){
+  fill: var(--clr-accent-green-400);
+}
+.patients-table-actions-edit-icon:is(:hover, :focus){
+  fill: var(--clr-accent-blue-400);
+}
+.patients-table-actions-delete-icon:is(:hover, :focus){
+  fill: var(--clr-accent-red-400);
+}
 /*  Button */
 .btn{
   background-color: var(--logo-clr);
@@ -321,6 +396,7 @@ main{
   padding: 0.5rem 1rem;
   border-radius: var(--border-radius-400);
   font-size: var(--fs-btn);
+  font-weight: var(--fw-semi-bold);
   cursor: pointer;
 }
 
@@ -387,8 +463,12 @@ main{
 .text-accent-400{
   color: var(--clr-accent-blue-400);
 }
+
 .capitalize{
   text-transform: capitalize;
+}
+.text-center{
+  text-align: center;
 }
 .fw-semi-bold{
   font-weight: var(--fw-semi-bold);
