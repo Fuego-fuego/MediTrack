@@ -40,6 +40,7 @@
 
   --fs-50: 0.70rem;
   --fs-100: 0.75rem;
+  --fs-200:0.875rem;
   --fs-300: 0.9375rem;
   --fs-400: 1rem;
   --fs-500: 1.125rem;
@@ -56,6 +57,7 @@
   --fs-btn: var(--fs-300);
   --fs-logo-small-text: var(--fs-50);
   --fs-primary-footer-copyright-text: var(--fs-100);
+  --fs-table: var(--fs-200);
 
   --border-input: 1px solid var(--border-clr);
   --border-radius-400: 8px;
@@ -65,11 +67,9 @@
   :root{
     --fs-primary-heading: var(--fs-800);
     --fs-secondary-heading: var(--fs-700);
-    --fs-body: var(--fs-500);
-    --fs-nav: var(--fs-300);
-    --fs-footer: var(--fs-200);
-    --fs-btn: var(--fs-300);
+    --fs-body: var(--fs-500);    
     --fs-logo-small-text: var(--fs-100);
+    --fs-table: var(--fs-400);
   }
 }
 
@@ -194,7 +194,7 @@ main{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: 1rem;
+  padding-block: 2rem 1.8rem;
   box-shadow: var(--shadow);
 }
 @media(max-width: 26em){
@@ -242,9 +242,11 @@ main{
   border-radius: var(--border-radius-400);
   box-shadow: var(--shadow);  
 }
-
+.add-patient-form-heading{
+  margin-bottom: 1rem;
+}
 .add-patient-form-fieldset{
-  padding: 0rem 0.5rem 1rem;
+  padding: 1rem 0.5rem 1rem;
 }
 
 .add-patient-form-input-wrapper{
@@ -302,6 +304,7 @@ main{
   padding: 1.5rem 1rem;
   border-radius: var(--border-radius-400);
   box-shadow: var(--shadow);  
+  
 }
 
 .patients-table-header{
@@ -309,7 +312,7 @@ main{
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;  
-  gap:1rem;  
+  gap:1rem; 
 }
 
 .patient-table-header-input-wrapper input,
@@ -334,6 +337,7 @@ main{
 @media (min-width: 50em) {
 .patient-table-header-input-search-wrapper{
   flex-direction: row;
+  align-items: center;
 }
 }
 
@@ -341,11 +345,17 @@ main{
 
 .table-wrapper{
   overflow-x: auto;
+  
+}
+.patients-table-caption{
+  margin-block-end: 1rem;
 }
 table{  
   margin-block-start: 2rem;
   width: 100%;
   border-collapse: collapse;
+  font-size:var(--fs-table);
+  
 }
 thead{
   border-bottom: 1px solid var(--border-clr);
@@ -365,6 +375,9 @@ tr:nth-child(even) {
   background-color: var(--tr-nth-child-even-bg);
 }
 
+td.numeric{
+  text-align: right;
+}
 .patients-table-action-buttons{
   display: flex;
   align-items: center;
