@@ -38,9 +38,9 @@
         <div class="theme-switcher-wrapper">
           <label for="themeSwitcher" class="capitalize fw-semi-bold">Theme:</label>
           <select name="theme-switcher" id="themeSwitcher" class="theme-switcher" aria-label="Theme Switcher">
-            <option value="" data-theme="system">System</option>
-            <option value="" data-theme="light">Light</option>
-            <option value="" data-theme="dark">Dark</option>
+            <option value="system" data-theme="system">System</option>
+            <option value="light" data-theme="light">Light</option>
+            <option value="dark" data-theme="dark">Dark</option>
           </select>
         </div>
       </div>
@@ -51,7 +51,7 @@
       <!-- FORM SECTION -->
       <section class="add-patient-form">
         <h2 class="add-patient-form-heading | fw-semi-bold secondary-heading  capitalize">add patient</h2>
-        <form action="">
+        <form action="" id="addPatientForm">
           <div class="flow">
             <!-- personal information -->
             <fieldset class="add-patient-form-fieldset ">
@@ -59,7 +59,7 @@
               <!-- full name -->
               <div class="add-patient-form-input-wrapper">
                 <label class="capitalize fw-semi-bold" for="name"> full name:</label>
-                <input type="text" name="name" id="name" placeholder="john doe" required>
+                <input type="text" name="name" id="name" placeholder="john doe" >
               </div>
               <!-- gender -->
               <div class="add-patient-form-input-wrapper">
@@ -72,7 +72,7 @@
               <!-- date of birth-->
               <div class="add-patient-form-input-wrapper">
                 <label class="capitalize fw-semi-bold" for="dateOfBirth"> date of birth:</label>
-                <input type="date" name="date-of-birth" id="dateOfBirth" required>
+                <input type="date" name="date-of-birth" id="dateOfBirth" >
               </div>
             </fieldset>
             <!-- contact information -->
@@ -81,12 +81,12 @@
               <!-- email -->
               <div class="add-patient-form-contact-input-wrapper | add-patient-form-input-wrapper">
                 <label class="capitalize fw-semi-bold" for="email"> email:</label>
-                <input type="email" name="email" id="email" placeholder="john.doe@example.com" required>
+                <input type="email" name="email" id="email" placeholder="john.doe@example.com" >
               </div>
               <!-- phone -->
               <div class="add-patient-form-contact-input-wrapper | add-patient-form-input-wrapper">
                 <label class="capitalize fw-semi-bold" for="phone"> phone:</label>
-                <input type="tel" name="phone" id="phone" placeholder="(123) 456-7890" required>
+                <input type="tel" name="phone" id="phone" placeholder="(123) 456-7890" >
               </div>
             </fieldset>
             <!-- medical details -->
@@ -95,7 +95,7 @@
               <!-- Condition -->
               <div class="add-patient-form-input-wrapper">
                 <label class="capitalize fw-semi-bold" for="condition"> condition:</label>
-                <input type="text" name="condition" id="condition" placeholder="e.g., Diabetes" required>
+                <input type="text" name="condition" id="condition" placeholder="e.g., Diabetes" >
               </div>
               <!-- status -->
               <div class="add-patient-form-input-wrapper">
@@ -103,14 +103,14 @@
                 <select name="status" id="status" required>
                   <option value="active">Active</option>
                   <option value="inactive">Recovered</option>
-                  <option value="inactive">Critical</option>
-                  <option value="inactive">Deceased</option>
+                  <option value="critical">Critical</option>
+                  <option value="deceased">Deceased</option>
                 </select>
               </div>
               <!-- last visit -->
               <div class="add-patient-form-input-wrapper">
-                <label class="capitalize fw-semi-bold" for="last-visit"> last visit:</label>
-                <input type="date" name="last-visit" id="lastVisit" required>
+                <label class="capitalize fw-semi-bold" for="lastVisit"> last visit:</label>
+                <input type="date" name="last-visit" id="lastVisit" >
               </div>
             </fieldset>
             <!-- Additional Notes -->
@@ -123,7 +123,7 @@
                   placeholder="Enter any additional notes about the patient..."></textarea>
               </div>
             </fieldset>
-            <input type="button" value="Add Patient" class="btn">
+            <input type="submit" value="Add Patient" class="btn">
           </div>
         </form>
     </div>
@@ -172,120 +172,34 @@
               </thead>
               <tbody id="patientsTableBody">
                 <!-- patient record template -->
-                <!-- record-1 -->
-                <tr class="patient-record" role="row">
+                <!-- <tr class="patient-record" role="row">
                   <td role="cell">John Doe</td>
                   <td class="numeric" role="cell">30</td>
                   <td role="cell">Diabetes</td>
                   <td role="cell">john.doe@example.com</td>
                   <td role="cell">
-                    <div class="patients-table-action-buttons">
+                    <div class="patients-table-action-buttons"> -->
                       <!-- view -->
-                      <div class="actions-icon-wraper">
+                      <!-- <div class="actions-icon-wraper">
                         <svg class=" patients-table-actions-view-icon | patients-table-actions-icon">
                           <use xlink:href="../src/assets/images/misc/misc.svg#view"></use>
                         </svg>
-                      </div>
+                      </div> -->
                       <!-- edit -->
-                      <div class="actions-icon-wraper">
+                      <!-- <div class="actions-icon-wraper">
                         <svg class="patients-table-actions-edit-icon | patients-table-actions-icon">
                           <use xlink:href="../src/assets/images/misc/misc.svg#edit"></use>
                         </svg>
-                      </div>
+                      </div> -->
                       <!-- delete -->
-                      <div class="actions-icon-wraper">
+                      <!-- <div class="actions-icon-wraper">
                         <svg class="patients-table-actions-delete-icon | patients-table-actions-icon">
                           <use xlink:href="../src/assets/images/misc/misc.svg#delete"></use>
                         </svg>
                       </div>
                     </div>
                   </td>
-                </tr>
-                <!-- record-2 -->
-                <tr class="patient-record">
-                  <td>Jane Smith</td>
-                  <td class="numeric">25</td>
-                  <td>Hypertension</td>
-                  <td>jane.smith@example.com</td>
-                  <td>
-                    <div class="patients-table-action-buttons">
-                      <!-- view -->
-                      <div class="actions-icon-wraper">
-                        <svg class=" patients-table-actions-view-icon | patients-table-actions-icon">
-                          <use xlink:href="../src/assets/images/misc/misc.svg#view"></use>
-                        </svg>
-                      </div>
-                      <!-- edit -->
-                      <div class="actions-icon-wraper">
-                        <svg class="patients-table-actions-edit-icon | patients-table-actions-icon">
-                          <use xlink:href="../src/assets/images/misc/misc.svg#edit"></use>
-                        </svg>
-                      </div>
-                      <!-- delete -->
-                      <div class="actions-icon-wraper">
-                        <svg class="patients-table-actions-delete-icon | patients-table-actions-icon">
-                          <use xlink:href="../src/assets/images/misc/misc.svg#delete"></use>
-                        </svg>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <!-- record-3 -->
-                <tr class="patient-record">
-                  <td>Michael Johnson</td>
-                  <td class="numeric">40</td>
-                  <td>Asthma</td>
-                  <td>michael.johnson@example.com</td>
-                  <td>
-                    <div class="patients-table-action-buttons">
-                      <!-- view -->
-                      <div class="actions-icon-wraper">
-                        <svg class=" patients-table-actions-view-icon | patients-table-actions-icon">
-                          <use xlink:href="../src/assets/images/misc/misc.svg#view"></use>
-                        </svg>
-                      </div>
-                      <!-- edit -->
-                      <div class="actions-icon-wraper">
-                        <svg class="patients-table-actions-edit-icon | patients-table-actions-icon">
-                          <use xlink:href="../src/assets/images/misc/misc.svg#edit"></use>
-                        </svg>
-                      </div>
-                      <!-- delete -->
-                      <div class="actions-icon-wraper">
-                        <svg class="patients-table-actions-delete-icon | patients-table-actions-icon">
-                          <use xlink:href="../src/assets/images/misc/misc.svg#delete"></use>
-                        </svg>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <!-- record-4 -->
-                <tr class="patient-record">
-                  <td>Emily Davis</td>
-                  <td class="numeric">35</td>
-                  <td>Arthritis</td>
-                  <td>emily.davis@example.com</td>
-                  <td>
-                    <div class="patients-table-action-buttons">
-                      <!-- view -->
-                      <div class="actions-icon-wraper">
-                        <svg class=" patients-table-actions-view-icon | patients-table-actions-icon">
-                          <use xlink:href="../src/assets/images/misc/misc.svg#view"></use>
-                        </svg>
-                      </div>
-                      <!-- edit -->
-                      <div class="actions-icon-wraper">
-                        <svg class="patients-table-actions-edit-icon | patients-table-actions-icon">
-                          <use xlink:href="../src/assets/images/misc/misc.svg#edit"></use>
-                        </svg>
-                      </div>
-                      <!-- delete -->
-                      <div class="actions-icon-wraper">
-                        <svg class="patients-table-actions-delete-icon | patients-table-actions-icon">
-                          <use xlink:href="../src/assets/images/misc/misc.svg#delete"></use>
-                        </svg>
-                      </div>
-                    </div>
+                </tr> --> 
               </tbody>
             </table>
           </div>
