@@ -59,20 +59,20 @@
               <!-- full name -->
               <div class="add-patient-form-input-wrapper">
                 <label class="capitalize fw-semi-bold" for="name"> full name:</label>
-                <input type="text" name="name" id="name" placeholder="john doe" >
+                <input type="text" name="name" id="name" placeholder="john doe">
               </div>
               <!-- gender -->
               <div class="add-patient-form-input-wrapper">
                 <label class="capitalize fw-semi-bold" for="gender"> gender:</label>
                 <select name="gender" id="gender" required>
-                  <option value="male">Male</option>
+                  <option value="man">Male</option>
                   <option value="female">Female</option>
                 </select>
               </div>
               <!-- date of birth-->
               <div class="add-patient-form-input-wrapper">
                 <label class="capitalize fw-semi-bold" for="dateOfBirth"> date of birth:</label>
-                <input type="date" name="date-of-birth" id="dateOfBirth" >
+                <input type="date" name="date-of-birth" id="dateOfBirth">
               </div>
             </fieldset>
             <!-- contact information -->
@@ -81,12 +81,12 @@
               <!-- email -->
               <div class="add-patient-form-contact-input-wrapper | add-patient-form-input-wrapper">
                 <label class="capitalize fw-semi-bold" for="email"> email:</label>
-                <input type="email" name="email" id="email" placeholder="john.doe@example.com" >
+                <input type="email" name="email" id="email" placeholder="john.doe@example.com">
               </div>
               <!-- phone -->
               <div class="add-patient-form-contact-input-wrapper | add-patient-form-input-wrapper">
                 <label class="capitalize fw-semi-bold" for="phone"> phone:</label>
-                <input type="tel" name="phone" id="phone" placeholder="(123) 456-7890" >
+                <input type="tel" name="phone" id="phone" placeholder="(123) 456-7890">
               </div>
             </fieldset>
             <!-- medical details -->
@@ -95,22 +95,22 @@
               <!-- Condition -->
               <div class="add-patient-form-input-wrapper">
                 <label class="capitalize fw-semi-bold" for="condition"> condition:</label>
-                <input type="text" name="condition" id="condition" placeholder="e.g., Diabetes" >
+                <input type="text" name="condition" id="condition" placeholder="e.g., Diabetes">
               </div>
               <!-- status -->
               <div class="add-patient-form-input-wrapper">
                 <label class="capitalize fw-semi-bold" for="status"> status:</label>
-                <select name="status" id="status" required>
-                  <option value="active">Active</option>
-                  <option value="inactive">Recovered</option>
-                  <option value="critical">Critical</option>
-                  <option value="deceased">Deceased</option>
+                <select class="capitalize" name="status" id="status" required>
+                  <option value="active">active</option>
+                  <option value="inactive">inactive</option>
+                  <option value="discharged">discharged</option>
+                  <option value="deceased">deceased</option>
                 </select>
               </div>
               <!-- last visit -->
               <div class="add-patient-form-input-wrapper">
                 <label class="capitalize fw-semi-bold" for="lastVisit"> last visit:</label>
-                <input type="date" name="last-visit" id="lastVisit" >
+                <input type="date" name="last-visit" id="lastVisit">
               </div>
             </fieldset>
             <!-- Additional Notes -->
@@ -133,28 +133,32 @@
         <div class="patients-table-wrapper">
           <!-- header -->
           <header class="patients-table-header">
-            <!-- search by name /-->
+            <!-- search by name -->
             <div class=" patient-table-header-input-search-wrapper | patient-table-header-input-wrapper">
               <label class="capitalize fw-semi-bold" for="patientTableSearchInput">search patients:</label>
               <input name="patient-table-search-input" id="patientTableSearchInput" type="text"
                 class="patients-table-search-input" placeholder="Search patients...">
             </div>
-            <!-- filter by condition -->
+            <!-- filter by status-->
             <div class="patient-table-header-input-wrapper">
-              <label class="capitalize fw-semi-bold" for="patientTableFilterInput">filter by:</label>
-              <select name="patient-table-filter-input" id="patientTableFilterInput" type="text"
-                class="patients-table-filter-input" placeholder="Filter by condition...">
-                <option value="">1</option>
-                <option value="">2</option>
+              <label class="capitalize fw-semi-bold" for="statusFilter"">status :</label>
+              <select name="status-filter" id="statusFilter" type="text"
+                class="patients-table-filter-input  capitalize" >
+                <option value="all" selected>all</option>
+                  <option value="active">active</option>
+                  <option value="inactive">inactive</option>
+                  <option value="discharged">discharged</option>
+                  <option value="deceased">deceased</option>
               </select>
             </div>
-            <!-- sort by date -->
+            <!-- filter by gender -->
             <div class="patient-table-header-input-wrapper">
-              <label class="capitalize fw-semi-bold" for="patientTableSortInput">sort by:</label>
-              <select name="patient-table-sort-input" id="patientTableSortInput" type="text"
-                class="patients-table-sort-input" placeholder="Sort by date...">
-                <option value="">1</option>
-                <option value="">2</option>
+              <label class="capitalize fw-semi-bold" for="genderFilter">Gender</label>
+              <select name="gender-filter" id="genderFilter" type="text"
+                class="patients-table-filter-input capitalize" >
+                <option class="capitalize" value="all" selected>all</option>
+                <option class="capitalize" value="man">male</option>
+                <option class="capitalize" value="female">female</option>
               </select>
             </div>
           </header>
@@ -179,27 +183,27 @@
                   <td role="cell">john.doe@example.com</td>
                   <td role="cell">
                     <div class="patients-table-action-buttons"> -->
-                      <!-- view -->
-                      <!-- <div class="actions-icon-wraper">
+                <!-- view -->
+                <!-- <div class="actions-icon-wraper">
                         <svg class=" patients-table-actions-view-icon | patients-table-actions-icon">
                           <use xlink:href="../src/assets/images/misc/misc.svg#view"></use>
                         </svg>
                       </div> -->
-                      <!-- edit -->
-                      <!-- <div class="actions-icon-wraper">
+                <!-- edit -->
+                <!-- <div class="actions-icon-wraper">
                         <svg class="patients-table-actions-edit-icon | patients-table-actions-icon">
                           <use xlink:href="../src/assets/images/misc/misc.svg#edit"></use>
                         </svg>
                       </div> -->
-                      <!-- delete -->
-                      <!-- <div class="actions-icon-wraper">
+                <!-- delete -->
+                <!-- <div class="actions-icon-wraper">
                         <svg class="patients-table-actions-delete-icon | patients-table-actions-icon">
                           <use xlink:href="../src/assets/images/misc/misc.svg#delete"></use>
                         </svg>
                       </div>
                     </div>
                   </td>
-                </tr> --> 
+                </tr> -->
               </tbody>
             </table>
           </div>
@@ -260,4 +264,5 @@
     </div>
   </footer>
 </body>
+
 </html>

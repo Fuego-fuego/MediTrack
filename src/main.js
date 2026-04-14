@@ -1,11 +1,28 @@
+// ======================
+// DOM ELEMENTS
+// ======================
 const addPatientForm = document.querySelector("#addPatientForm");
+const patientTableSearchInput = document.querySelector('#patientTableSearchInput');
+const statusFilter = document.querySelector('#statusFilter');
+const genderFilter = document.querySelector('#genderFilter');
 const tableBody = document.querySelector("#patientsTableBody");
-const BASE_URL = "http://localhost:3000/patients";
 
+// ======================
+// APPLICATION STATE
+// ======================
 const allPatientsList  = [];
 
+// ======================
+// APPLICATION STATE
+// ======================
+const BASE_URL = "http://localhost:3000/patients";
 
-// Patients Age
+// ======================
+// UTILITIES
+// ======================
+
+
+// Calculate patient age from date of birth
 const calculateAge = (dateOfBirth) => {
     const today = new Date();
     const birthDate = new Date(dateOfBirth);
@@ -18,9 +35,76 @@ const calculateAge = (dateOfBirth) => {
     return age;
 }
 
+// ======================
+// API CALLS
+// ======================
+// Fetch all patients
+const fetchPatients = async () => {
+    try{
+        const response = await fetch(BASE_URL);
+        if(!response.ok){
+            throw new Error("Failed to fetch patients, status:" + response.status);
+        }
+        const patients = await response.json();
+        allPatientsList.push(...patients);
+        updateUI();                
 
-// Patients Display
+    }catch(error){
+        console.error("Error fetching patients:", error.message);
+    }
+}
+
+// Create new patient
+const postPatient = async (newPatientData) => {
+    try{
+        const response = await fetch(BASE_URL,{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(newPatientData)
+        });
+        if(!response.ok) throw new Error("Failed to create patient, status:" + response.status);
+    const newPatient = await response.json()
+    allPatientsList.unshift(newPatient)
+    updateUI();
+
+    }catch(error){
+        console.error("Error:", error.message);
+    }
+}
+
+// ======================
+// DATA PROCESSING (SEARCH / FILTER / SORT)
+// ======================
+const applyFilterAndRender = () => {
+    let result = [...allPatientsList];    
+    const searchValue = patientTableSearchInput.value.toLowerCase();
+    const status = statusFilter.value.toLowerCase();
+    const gender = genderFilter.value.toLowerCase();
+    console.log(genderFilter.value)
+    // Search 
+    if(searchValue){
+        result = result.filter( p => p.name.toLowerCase().includes(searchValue))
+    }
+    // filter by status 
+    if(status !== 'all'){
+        result = result.filter(p => p.status.toLowerCase().includes(status))   
+        
+    }
+    // filter by gender
+    if(gender !== 'all'){
+        result = result.filter(p => p.gender.toLowerCase().includes(gender))   
+        
+    }
+    displayPatients(result);
+}
+
+// ======================
+// UI RENDERING
+// ======================
 const displayPatients = (patients) => {
+    tableBody.innerHTML = ""; 
 
     patients.forEach( patient => {
     const tableRow = document.createElement("tr");
@@ -58,46 +142,29 @@ const displayPatients = (patients) => {
     </tr>    
     `;
     tableBody.prepend(tableRow);
-    })
-    
-}
-// Fetch patients
-const fetchPatients = async () => {
-    try{
-        const response = await fetch(BASE_URL);
-        if(!response.ok){
-            throw new Error("Failed to fetch patients");
-        }
-        const patients = await response.json();
-        displayPatients(patients);
-        allPatientsList.push(...patients);        
-
-    }catch(error){
-        console.error("Error fetching patients:", error.message);
-    }
+    })    
 }
 
-fetchPatients();
-// Post Patient
-const postPatient = async (newPatientData) => {
-    try{
-        const response = await fetch(BASE_URL,{
-            method:"POST",
-            header:{
-                "Content-Type":"application/json"
-            },
-            body: JSON.stringify(newPatientData)
-        });
-        if(!response.ok) throw new Error("Failed to create patient");
-    const newPatient = await response.json()
-    displayPatients([newPatient])
-    allPatientsList.unshift([newPatient])
-
-    }catch(error){
-        console.error("Error:", error.message);
-    }
+// ======================
+// CONTROLLER
+// ======================
+// Central UI updater (single pipeline)
+const updateUI = () =>{
+    applyFilterAndRender();
 }
-// Add Patient
+
+// ======================
+// EVENT LISTENERS
+// ======================
+// Search
+patientTableSearchInput.addEventListener("input", updateUI);
+
+// Filters
+statusFilter.addEventListener('change', updateUI);
+genderFilter.addEventListener('change', updateUI)
+
+
+//  Form Submit (patient)
 addPatientForm.addEventListener("submit",  (e) => {
     e.preventDefault();
 
@@ -114,3 +181,14 @@ addPatientForm.addEventListener("submit",  (e) => {
     }
     postPatient(newPatientData)
     })      
+
+// ======================
+// INIT
+// ======================
+
+const init = () => {
+    fetchPatients();
+};
+
+init();
+
