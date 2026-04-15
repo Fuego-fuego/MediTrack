@@ -21,6 +21,7 @@
 </head>
 
 <body>
+  <!-- HEADER -->
   <header class="primary-header">
     <div class="container">
       <div class="primary-header-content-wrapper">
@@ -46,6 +47,7 @@
       </div>
     </div>
   </header>
+  <!-- MAIN -->
   <main>
     <div class="container">
       <!-- FORM SECTION -->
@@ -142,20 +144,19 @@
             <!-- filter by status-->
             <div class="patient-table-header-input-wrapper">
               <label class="capitalize fw-semi-bold" for="statusFilter"">status :</label>
-              <select name="status-filter" id="statusFilter" type="text"
-                class="patients-table-filter-input  capitalize" >
+              <select name=" status-filter" id="statusFilter" type="text"
+                class="patients-table-filter-input  capitalize">
                 <option value="all" selected>all</option>
-                  <option value="active">active</option>
-                  <option value="inactive">inactive</option>
-                  <option value="discharged">discharged</option>
-                  <option value="deceased">deceased</option>
-              </select>
+                <option value="active">active</option>
+                <option value="inactive">inactive</option>
+                <option value="discharged">discharged</option>
+                <option value="deceased">deceased</option>
+                </select>
             </div>
             <!-- filter by gender -->
             <div class="patient-table-header-input-wrapper">
               <label class="capitalize fw-semi-bold" for="genderFilter">Gender</label>
-              <select name="gender-filter" id="genderFilter" type="text"
-                class="patients-table-filter-input capitalize" >
+              <select name="gender-filter" id="genderFilter" type="text" class="patients-table-filter-input capitalize">
                 <option class="capitalize" value="all" selected>all</option>
                 <option class="capitalize" value="man">male</option>
                 <option class="capitalize" value="female">female</option>
@@ -211,6 +212,7 @@
       </div>
     </section>
   </main>
+  <!-- FOOTER -->
   <footer class="primary-footer">
     <div class="container">
       <div class="primary-footer-wrapper">
@@ -263,6 +265,27 @@
       </div>
     </div>
   </footer>
+  <!--  MODALS  -->
+  <div id="viewModal" class="patient-table-view-modal | modal" aria-label="Full patients details">
+    <div class="modal-content">
+      <!-- view header -->
+    <div class="modal-header">
+      <h2>Patient Details</h2>
+      <button class="close-modal-btn btn" aria-label="Close">&times;</button>
+    </div>
+<!-- meta -->
+    <div class="patient-identity">
+      <h3>${name}</h3>
+      <p>${gender} • ${age} years</p>
+    </div>
+    <div class="patient-details">
+      <div><span>Email:</span><p>${email || "N/A"}</p></div>
+      <div><span>Phone:</span><p>${phone || "N/A"}</p></div>
+      <div><span>DOB:</span><p>${dob}</p></div>
+      <div><span>Condition:</span><p>${condition || "N/A"}</p></div>
+    </div>
+    </div>
+  </div>
 </body>
 
 </html>
