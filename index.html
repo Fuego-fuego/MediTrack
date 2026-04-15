@@ -266,25 +266,66 @@
     </div>
   </footer>
   <!--  MODALS  -->
-  <div id="viewModal" class="patient-table-view-modal | modal" aria-label="Full patients details">
-    <div class="modal-content">
-      <!-- view header -->
-    <div class="modal-header">
-      <h2>Patient Details</h2>
-      <button class="close-modal-btn btn" aria-label="Close">&times;</button>
-    </div>
-<!-- meta -->
-    <div class="patient-identity">
-      <h3>${name}</h3>
-      <p>${gender} • ${age} years</p>
-    </div>
-    <div class="patient-details">
-      <div><span>Email:</span><p>${email || "N/A"}</p></div>
-      <div><span>Phone:</span><p>${phone || "N/A"}</p></div>
-      <div><span>DOB:</span><p>${dob}</p></div>
-      <div><span>Condition:</span><p>${condition || "N/A"}</p></div>
-    </div>
-    </div>
+  <div id="viewModal" class="patient-table-view-modal | modal" aria-label="patients details">
+    <article>
+    <!-- HEADER -->
+    <header class="view-modal-header">
+      <h2 class="modal-title | fw-bold" id="viewModalTitle">Patient Details</h2>
+      <button id="closeModalBtn" class=" btn" aria-label="close dialog" data-type="close-modal-btn">&times;</button>
+    </header>
+    <!-- MAIN CONTENT -->
+    <div class="modal-body">
+      <!-- Identity -->
+      <section class="view-modal-patient-identity">
+        <h3 class="modal-title | fw-semi-bold">John Doe</h3>
+        <p>Male • 31 years</p>
+      </section>
+      <!-- Details -->
+      <div class="patient-details-wrapper">
+        <dl class="patient-details">
+          <!-- Email , Phone & Status Group -->
+          <div class="patient-details-group">
+            <!-- email -->
+            <div class="patient-detail-wrapper">
+              <dt>Email:</dt>
+              <dd>john@example.com</dd>
+            </div>
+            <!-- phone -->
+            <div class="patient-detail-wrapper">
+              <dt>Phone:</dt>
+              <dd>0756789089</dd>
+            </div>
+                        <!-- status -->
+            <div class="patient-detail-wrapper">
+      <dt>Status: </dt>
+      <dd>Active</dd>
+            </div>
+          </div>
+
+          
+          <!-- Condition DOB Date-of-Last-Visit  Group -->
+          <div class="patient-details-group">
+                        <!-- Condition -->
+            <div class="patient-detail-wrapper">
+              <dt>Condition:</dt>
+              <dd>Hypertension</dd>
+            </div>
+            <!-- Date-of-Last-Visit -->
+            <div class="patient-detail-wrapper">
+      <dt>Last Visit:</dt>
+      <dd>2025-02-10</dd>
+            </div>
+            <!-- DOB -->
+            <div class="patient-detail-wrapper">
+              <dt>Date of Birth:</dt>
+              <dd>1993-05-15</dd>
+            </div>
+          </div>
+        </dl>
+        </div>
+      </div>
+    </section>
+  </article>
   </div>
 </body>
 
