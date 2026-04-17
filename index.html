@@ -266,12 +266,12 @@
     </div>
   </footer>
   <!--  MODALS  -->
-  <div id="viewModal" class="patient-table-view-modal | modal" aria-label="patients details">
+  <dialog id="viewModal" class="patient-table-view-modal | modal" aria-label="patients details">
     <article>
     <!-- HEADER -->
     <header class="view-modal-header">
       <h2 class="modal-title | fw-bold" id="viewModalTitle">Patient Details</h2>
-      <button id="closeModalBtn" class=" btn" aria-label="close dialog" data-type="close-modal-btn">&times;</button>
+      <button commandfor="viewModal" command="close" class="btn" aria-label="close dialog" data-type="close-modal-btn">&times;</button>
     </header>
     <!-- MAIN CONTENT -->
     <div class="modal-body">
@@ -301,7 +301,6 @@
       <dd>Active</dd>
             </div>
           </div>
-
           
           <!-- Condition DOB Date-of-Last-Visit  Group -->
           <div class="patient-details-group">
@@ -323,10 +322,12 @@
           </div>
         </dl>
         </div>
-      </div>
-    </section>
+        <section class="patient-notes">
+  <h4>Clinical Notes</h4>
+  <p>BP controlled with amlodipine.</p>
+</section>
+      </div>    
   </article>
-  </div>
+  </dialog>
 </body>
-
 </html>
